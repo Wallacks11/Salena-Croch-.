@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Salena Crochê</title>
+<style>
+body{margin:0;font-family:Arial;background:#fffaf7}
+.topo{background:#ff8c42;color:white;text-align:center;padding:40px;position:relative}
+.topo .login-btn{position:absolute;top:20px;right:20px;background:white;color:#ff8c42;padding:8px 18px;border-radius:20px;text-decoration:none;font-weight:bold;cursor:pointer}
+.fundadora{max-width:900px;margin:30px auto;display:flex;gap:20px;background:white;padding:25px;border-radius:20px;box-shadow:0 4px 15px rgba(0,0,0,0.1);align-items:center}
+.fundadora img{width:170px;height:170px;border-radius:50%;object-fit:cover;border:4px solid #ff8c42}
+.galeria{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;padding:20px}
+.card{background:white;border-radius:15px;overflow:hidden;box-shadow:0 4px 10px rgba(0,0,0,0.1);text-align:center;padding-bottom:15px}
+.card img{width:100%;height:350px;object-fit:cover}
+.sobre,.politica,.conta{max-width:900px;margin:30px auto;background:white;padding:30px;border-radius:20px;box-shadow:0 4px 10px rgba(0,0,0,0.08)}
+.whats{display:block;max-width:300px;margin:30px auto;background:#25D366;color:white;text-align:center;padding:15px;border-radius:30px;text-decoration:none;font-weight:bold}
+input{width:100%;padding:12px;margin:8px 0;border:1px solid #ddd;border-radius:8px;box-sizing:border-box}
+.btn{background:#ff8c42;color:white;border:none;padding:12px 20px;border-radius:8px;cursor:pointer;width:100%;font-weight:bold;font-size:16px;margin-top:10px}
+#contaModal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.6);z-index:1000;justify-content:center;align-items:center}
+#contaBox{background:white;padding:30px;border-radius:20px;max-width:400px;width:90%}
+.tabs{display:flex;gap:10px;margin-bottom:20px}
+.tab{flex:1;padding:10px;text-align:center;cursor:pointer;border-radius:8px;background:#f5f5f5}
+.tab.ativo{background:#ff8c42;color:white}
+</style>
+</head>
+<body>
+<div class="topo">
+<span class="login-btn" onclick="abrirConta()">👤 Minha Conta</span>
+<h1>Salena Crochê 🧶</h1>
+<p>Feito à mão com amor</p>
+<p id="boasVindas" style="font-weight:bold;margin-top:10px;"></p>
+</div>
+
+<div class="fundadora">
+<img src="top-brasil.jpg">
+<div><h2>Fundadora - Salena</h2><p>Sou apaixonada por crochê! Cada peça feita à mão com carinho. Serra - ES</p></div>
+</div>
+
+<div style="max-width:900px;margin:20px auto;background:white;padding:20px;border-radius:20px;text-align:center;">
+<h2 style="color:#ff8c42;">Bem-vinda à Salena!</h2>
+<p>Moda praia 100% feita à mão, linha premium, feita por encomenda pra você.</p>
+</div>
+
+<h2 style="text-align:center;">Nossa Coleção</h2>
+<div class="galeria">
+<div class="card"><img src="top-laranja.jpg"><h3>Conjunto Laranja</h3><p style="color:#ff8c42;font-weight:bold;">R$149,90</p><button class="btn" onclick="precisaLogin()">Comprar</button></div>
+<div class="card"><img src="top-brasil.jpg"><h3>Top Brasil</h3><p style="color:#ff8c42;font-weight:bold;">R$89,90</p><button class="btn" onclick="precisaLogin()">Comprar</button></div>
+<div class="card"><img src="conjunto-azul.jpg"><h3>Conjunto Azul Flor</h3><p style="color:#ff8c42;font-weight:bold;">R$159,90</p><button class="btn" onclick="precisaLogin()">Comprar</button></div>
+</div>
+
+<div class="conta" style="text-align:center;">
+<h2 style="color:#ff8c42;">Crie sua conta e ganhe 10% OFF!</h2>
+<p>Cadastre-se para salvar favoritos e acompanhar pedidos.</p>
+<button class="btn" style="max-width:300px;" onclick="abrirConta()">Criar Minha Conta</button>
+</div>
+
+<div class="sobre"><h2 style="color:#ff8c42;">Sobre Nós</h2><p>Salena Crochê nasceu em 2023 na Serra, ES. Cada ponto feito à mão por mim, sem máquina. Qualidade e autoestima.</p></div>
+
+<div class="politica"><h2 style="color:#ff8c42;">Política</h2>
+<ul style="line-height:1.8;">
+<li><b>Envio:</b> Todo Brasil, produção 5-10 dias</li>
+<li><b>Troca:</b> Só por defeito em 7 dias</li>
+<li><b>Medidas:</b> Envie pelo WhatsApp</li>
+<li><b>Privacidade:</b> Seus dados só para envio</li>
+</ul>
+</div>
+
+<a class="whats" href="https://wa.me/5527999999999">Falar no WhatsApp</a>
+
+<div id="contaModal"><div id="contaBox">
+<span style="float:right;cursor:pointer;font-size:24px;" onclick="fecharConta()">&times;</span>
+<h2 style="color:#ff8c42;text-align:center;">Minha Conta</h2>
+<div class="tabs"><div class="tab ativo" id="tabLogin" onclick="mostrarTab('login')">Entrar</div><div class="tab" id="tabCadastro" onclick="mostrarTab('cadastro')">Criar Conta</div></div>
+<div id="formLogin"><input type="email" id="loginEmail" placeholder="E-mail"><input type="password" id="loginSenha" placeholder="Senha"><button class="btn" onclick="fazerLogin()">Entrar</button><p id="loginMsg" style="color:red;text-align:center;"></p></div>
+<div id="formCadastro" style="display:none;"><input type="text" id="cadNome" placeholder="Nome completo"><input type="email" id="cadEmail" placeholder="E-mail"><input type="tel" id="cadZap" placeholder="WhatsApp"><input type="password" id="cadSenha" placeholder="Crie uma senha"><button class="btn" onclick="fazerCadastro()">Criar Conta e Ganhar 10% OFF</button><p id="cadMsg" style="text-align:center;"></p></div>
+</div></div>
+
+<script>
+let usuarioLogado=JSON.parse(localStorage.getItem('salena_user')||'null');
+function atualizarBoasVindas(){if(usuarioLogado){document.getElementById('boasVindas').innerHTML='Olá, '+usuarioLogado.nome+'! 🌸 <a href="#" onclick="sair()" style="color:white;text-decoration:underline;">Sair</a>';}}
+function abrirConta(){document.getElementById('contaModal').style.display='flex';}
+function fecharConta(){document.getElementById('contaModal').style.display='none';}
+function mostrarTab(t){document.getElementById('formLogin').style.display=t==='login'?'block':'none';document.getElementById('formCadastro').style.display=t==='cadastro'?'block':'none';document.getElementById('tabLogin').classList.toggle('ativo',t==='login');document.getElementById('tabCadastro').classList.toggle('ativo',t==='cadastro');}
+function fazerCadastro(){let nome=document.getElementById('cadNome').value,email=document.getElementById('cadEmail').value,zap=document.getElementById('cadZap').value,senha=document.getElementById('cadSenha').value;if(!nome||!email||!senha){document.getElementById('cadMsg').style.color='red';document.getElementById('cadMsg').innerText='Preencha tudo!';return;}let usuarios=JSON.parse(localStorage.getItem('salena_usuarios')||'[]');if(usuarios.find(u=>u.email===email)){document.getElementById('cadMsg').style.color='red';document.getElementById('cadMsg').innerText='E-mail já cadastrado!';return;}let novo={nome,email,zap,senha};usuarios.push(novo);localStorage.setItem('salena_usuarios',JSON.stringify(usuarios));localStorage.setItem('salena_user',JSON.stringify(novo));usuarioLogado=novo;document.getElementById('cadMsg').style.color='green';document.getElementById('cadMsg').innerText='Conta criada! 10% OFF liberado! 🎉';setTimeout(()=>{fecharConta();atualizarBoasVindas();},1500);}
+function fazerLogin(){let email=document.getElementById('loginEmail').value,senha=document.getElementById('loginSenha').value;let usuarios=JSON.parse(localStorage.getItem('salena_usuarios')||'[]');let u=usuarios.find(x=>x.email===email&&x.senha===senha);if(u){localStorage.setItem('salena_user',JSON.stringify(u));usuarioLogado=u;fecharConta();atualizarBoasVindas();}else{document.getElementById('loginMsg').innerText='E-mail ou senha errados!';}}
+function sair(){localStorage.removeItem('salena_user');usuarioLogado=null;document.getElementById('boasVindas').innerHTML='';}
+function precisaLogin(){if(!usuarioLogado){abrirConta();alert('Crie sua conta para comprar e ganhar 10% OFF!');}else{window.open('https://wa.me/5527999999999?text=Olá! Sou '+usuarioLogado.nome+' e quero encomendar','_blank');}}
+atualizarBoasVindas();
+window.onclick=function(e){if(e.target==document.getElementById('contaModal'))fecharConta();}
+</script>
+</body>
+</html>
