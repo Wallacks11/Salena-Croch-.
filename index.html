@@ -4,16 +4,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Salena Crochê</title>
+<title>Salena Crochê | Moda Artesanal</title>
 
 <style>
+
 :root{
     --roxo:#7b3ff2;
-    --roxo-escuro:#4b1fa6;
-    --lilas:#c8a2ff;
+    --roxo2:#4b1fa6;
     --rosa:#f3a6c8;
-    --fundo:#faf7ff;
-    --branco:#fff;
+    --lilas:#eee3ff;
+    --fundo:#fbf8ff;
     --texto:#29232f;
     --cinza:#777;
     --verde:#25d366;
@@ -35,26 +35,27 @@ body{
     color:var(--texto);
 }
 
-
 /* MENU */
 
 header{
     position:sticky;
     top:0;
     z-index:1000;
-    background:rgba(255,255,255,.95);
+    background:rgba(255,255,255,.96);
     backdrop-filter:blur(12px);
     border-bottom:1px solid #eee;
-    padding:15px 6%;
+    padding:14px 6%;
     display:flex;
     align-items:center;
     justify-content:space-between;
+    gap:20px;
 }
 
 .logo{
     font-size:25px;
-    font-weight:bold;
+    font-weight:800;
     color:var(--roxo);
+    white-space:nowrap;
 }
 
 .logo span{
@@ -63,141 +64,144 @@ header{
 
 nav{
     display:flex;
-    gap:25px;
+    gap:22px;
+    flex-wrap:wrap;
+    justify-content:center;
 }
 
 nav a{
     color:var(--texto);
     text-decoration:none;
     font-weight:bold;
-    transition:.3s;
 }
 
 nav a:hover{
     color:var(--roxo);
 }
 
-.menu-botoes{
+.menu{
     display:flex;
     gap:8px;
 }
 
-.icon-btn{
-    border:none;
-    background:#f0e8ff;
+.btn-top{
+    border:0;
+    background:var(--lilas);
     color:var(--roxo);
     padding:10px 14px;
-    border-radius:20px;
-    cursor:pointer;
+    border-radius:22px;
     font-weight:bold;
-    transition:.3s;
+    cursor:pointer;
 }
 
-.icon-btn:hover{
+.btn-top:hover{
     background:var(--roxo);
     color:white;
 }
-
 
 /* HERO */
 
 .hero{
-    min-height:650px;
+    min-height:620px;
+    padding:80px 20px;
     display:flex;
     align-items:center;
     justify-content:center;
     text-align:center;
-    padding:80px 20px;
+
     background:
-        radial-gradient(circle at top left,#e6d5ff,transparent 40%),
-        radial-gradient(circle at bottom right,#ffd9e9,transparent 40%);
+        radial-gradient(
+            circle at 15% 20%,
+            #e6d5ff,
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 85% 80%,
+            #ffd9e9,
+            transparent 35%
+        );
 }
 
 .hero-content{
     max-width:850px;
-    animation:entrada 1s ease;
 }
 
 .hero h1{
-    font-size:65px;
+    font-size:clamp(45px,8vw,72px);
     color:var(--roxo);
-    margin-bottom:15px;
+    margin-bottom:12px;
 }
 
 .hero h2{
-    font-size:28px;
-    margin-bottom:20px;
+    font-size:clamp(22px,4vw,30px);
+    margin-bottom:18px;
 }
 
 .hero p{
-    font-size:19px;
+    font-size:18px;
     line-height:1.7;
     color:var(--cinza);
 }
 
-.botao{
+.btn{
     display:inline-block;
-    margin-top:30px;
+    margin-top:28px;
     padding:15px 30px;
     border-radius:30px;
     background:var(--roxo);
-    color:white;
+    color:#fff;
     text-decoration:none;
     font-weight:bold;
-    box-shadow:0 10px 25px rgba(123,63,242,.3);
-    transition:.3s;
+    box-shadow:0 10px 25px #7b3ff24d;
 }
 
-.botao:hover{
-    transform:translateY(-5px);
-    background:var(--roxo-escuro);
+.btn:hover{
+    background:var(--roxo2);
+    transform:translateY(-2px);
 }
-
 
 /* SEÇÕES */
 
 section{
-    padding:80px 7%;
+    padding:75px 7%;
 }
 
 .titulo{
     text-align:center;
-    margin-bottom:45px;
+    margin-bottom:40px;
 }
 
 .titulo h2{
-    color:var(--roxo);
     font-size:38px;
+    color:var(--roxo);
 }
 
 .titulo p{
-    margin-top:10px;
     color:var(--cinza);
+    margin-top:8px;
 }
-
 
 /* FUNDADORA */
 
 .fundadora{
-    max-width:1000px;
+    max-width:1050px;
     margin:auto;
-    background:white;
+    background:#fff;
     padding:35px;
     border-radius:30px;
     display:flex;
     align-items:center;
     gap:35px;
-    box-shadow:0 10px 35px rgba(0,0,0,.08);
-    transition:.4s;
+    box-shadow:0 10px 35px #00000012;
 }
 
 .fundadora:hover{
-    transform:translateY(-7px);
+    transform:translateY(-5px);
 }
 
 .fundadora img{
-    width:200px;
-    height:200px;
+    width:220px;
+    height:220px;
     object-fit:cover;
     border-radius:50%;
     border:6px solid var(--lilas);
@@ -208,6 +212,11 @@ section{
     margin-bottom:12px;
 }
 
+.fundadora p{
+    line-height:1.7;
+    color:var(--cinza);
+}
+
 .nome{
     text-align:center;
     color:var(--roxo);
@@ -215,8 +224,7 @@ section{
     margin-top:10px;
 }
 
-
-/* COLEÇÃO */
+/* PRODUTOS */
 
 .produtos{
     background:#f1eaff;
@@ -226,27 +234,29 @@ section{
     max-width:1200px;
     margin:auto;
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    grid-template-columns:
+        repeat(auto-fit,minmax(250px,1fr));
     gap:25px;
 }
 
 .card{
-    background:white;
+    background:#fff;
     border-radius:22px;
     overflow:hidden;
-    box-shadow:0 8px 25px rgba(0,0,0,.08);
-    transition:.4s;
+    box-shadow:0 8px 25px #00000012;
+    transition:.3s;
 }
 
 .card:hover{
-    transform:translateY(-10px) scale(1.02);
-    box-shadow:0 20px 40px rgba(123,63,242,.2);
+    transform:translateY(-7px);
+    box-shadow:0 18px 35px #7b3ff233;
 }
 
 .card img{
     width:100%;
-    height:350px;
+    height:360px;
     object-fit:cover;
+    display:block;
 }
 
 .card-info{
@@ -254,6 +264,7 @@ section{
 }
 
 .card h3{
+    font-size:20px;
     margin-bottom:8px;
 }
 
@@ -271,46 +282,43 @@ section{
 
 .comprar{
     width:100%;
+    border:0;
     padding:13px;
-    border:none;
     border-radius:10px;
     background:var(--roxo);
-    color:white;
+    color:#fff;
     font-weight:bold;
     cursor:pointer;
-    transition:.3s;
 }
 
 .comprar:hover{
-    background:var(--roxo-escuro);
+    background:var(--roxo2);
 }
-
 
 /* SOBRE */
 
 .sobre{
-    max-width:900px;
+    max-width:850px;
     margin:auto;
     text-align:center;
 }
 
 .sobre p{
-    color:var(--cinza);
+    font-size:18px;
     line-height:1.9;
-    font-size:17px;
+    color:var(--cinza);
 }
-
 
 /* POLÍTICA */
 
 .politica{
-    background:white;
+    background:#fff;
 }
 
 .politica-box{
-    max-width:900px;
+    max-width:850px;
     margin:auto;
-    background:#faf7ff;
+    background:var(--fundo);
     padding:30px;
     border-radius:20px;
 }
@@ -320,13 +328,17 @@ section{
     line-height:1.6;
 }
 
-
 /* CONTATO */
 
 .contato{
     text-align:center;
-    color:white;
-    background:linear-gradient(135deg,var(--roxo),var(--roxo-escuro));
+    color:#fff;
+    background:
+        linear-gradient(
+            135deg,
+            var(--roxo),
+            var(--roxo2)
+        );
 }
 
 .contato h2{
@@ -342,31 +354,28 @@ section{
     margin-top:25px;
     padding:15px 30px;
     background:var(--verde);
-    color:white;
+    color:#fff;
     text-decoration:none;
     border-radius:30px;
     font-weight:bold;
-    transition:.3s;
 }
 
 .whatsapp:hover{
     transform:scale(1.05);
 }
 
-
 /* RODAPÉ */
 
 footer{
     background:#28143f;
-    color:white;
+    color:#fff;
     text-align:center;
-    padding:30px;
+    padding:28px;
 }
 
 footer p{
     margin:7px;
 }
-
 
 /* MODAIS */
 
@@ -376,8 +385,8 @@ footer p{
     inset:0;
     z-index:3000;
     background:rgba(0,0,0,.65);
-    justify-content:center;
     align-items:center;
+    justify-content:center;
     padding:20px;
 }
 
@@ -387,27 +396,26 @@ footer p{
 
 .modal-box{
     width:100%;
-    max-width:450px;
+    max-width:460px;
     max-height:90vh;
     overflow:auto;
-    background:white;
+    background:#fff;
     border-radius:25px;
     padding:30px;
     position:relative;
-    animation:subir .3s ease;
 }
 
 .fechar{
     position:absolute;
     right:20px;
-    top:15px;
-    font-size:28px;
+    top:12px;
+    font-size:30px;
     cursor:pointer;
 }
 
 .modal-box h2{
     color:var(--roxo);
-    margin-bottom:20px;
+    margin-bottom:18px;
 }
 
 .modal-box input{
@@ -421,31 +429,29 @@ footer p{
 .btn-modal{
     width:100%;
     padding:13px;
-    border:none;
+    margin-top:10px;
+    border:0;
     border-radius:10px;
     background:var(--roxo);
-    color:white;
+    color:#fff;
     font-weight:bold;
     cursor:pointer;
-    margin-top:10px;
 }
 
-
-/* CARRINHO */
-
-.item-carrinho{
+.item{
     display:flex;
     justify-content:space-between;
     align-items:center;
+    gap:15px;
     padding:13px 0;
     border-bottom:1px solid #eee;
 }
 
 .remover{
-    border:none;
+    border:0;
     background:#ffe3ee;
     color:#c62865;
-    padding:7px 10px;
+    padding:8px 10px;
     border-radius:8px;
     cursor:pointer;
 }
@@ -457,53 +463,18 @@ footer p{
     font-weight:bold;
 }
 
-
-/* ANIMAÇÕES */
-
-@keyframes entrada{
-    from{
-        opacity:0;
-        transform:translateY(30px);
-    }
-
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-}
-
-@keyframes subir{
-    from{
-        opacity:0;
-        transform:translateY(30px);
-    }
-
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-}
-
-
 /* CELULAR */
 
 @media(max-width:800px){
 
     header{
         flex-wrap:wrap;
-        gap:15px;
+        justify-content:center;
     }
 
     nav{
-        width:100%;
         order:3;
-        justify-content:center;
-        flex-wrap:wrap;
-        gap:15px;
-    }
-
-    .hero h1{
-        font-size:45px;
+        width:100%;
     }
 
     .fundadora{
@@ -512,8 +483,8 @@ footer p{
     }
 
     .fundadora img{
-        width:170px;
-        height:170px;
+        width:180px;
+        height:180px;
     }
 
 }
@@ -521,9 +492,9 @@ footer p{
 </style>
 </head>
 
-
 <body>
 
+<!-- MENU -->
 
 <header>
 
@@ -532,21 +503,31 @@ footer p{
     </div>
 
     <nav>
+
         <a href="#inicio">Início</a>
         <a href="#colecao">Coleção</a>
         <a href="#sobre">Sobre</a>
         <a href="#politica">Política</a>
         <a href="#contato">Contato</a>
+
     </nav>
 
-    <div class="menu-botoes">
+    <div class="menu">
 
-        <button class="icon-btn" onclick="abrirConta()">
+        <button
+            class="btn-top"
+            onclick="abrirConta()">
+
             👤 Conta
+
         </button>
 
-        <button class="icon-btn" onclick="abrirCarrinho()">
+        <button
+            class="btn-top"
+            onclick="abrirCarrinho()">
+
             🛒 <span id="contador">0</span>
+
         </button>
 
     </div>
@@ -554,28 +535,41 @@ footer p{
 </header>
 
 
-<section class="hero" id="inicio">
+<!-- INÍCIO -->
+
+<section
+    class="hero"
+    id="inicio">
 
     <div class="hero-content">
 
-        <h1>Salena Crochê</h1>
+        <h1>
+            Salena Crochê
+        </h1>
 
-        <h2>Moda artesanal feita à mão</h2>
+        <h2>
+            Moda artesanal feita à mão ✨
+        </h2>
 
         <p>
-            Peças exclusivas de crochê,
-            feitas com carinho, qualidade
-            e muita personalidade.
+            Peças exclusivas feitas com carinho,
+            qualidade e muita personalidade.
         </p>
 
-        <a href="#colecao" class="botao">
-            Conhecer Coleção ✨
+        <a
+            class="btn"
+            href="#colecao">
+
+            Ver nossa coleção
+
         </a>
 
     </div>
 
 </section>
 
+
+<!-- FUNDADORA -->
 
 <section>
 
@@ -584,8 +578,8 @@ footer p{
         <div>
 
             <img
-            src="https://images.pexels.com/photos/18539313/pexels-photo-18539313.jpeg?auto=compress&cs=tinysrgb&w=600"
-            alt="Moda de crochê">
+                src="fundadora.jpg"
+                alt="Fundadora da Salena Crochê">
 
             <div class="nome">
                 Samara Leocadio Nascimento
@@ -596,19 +590,23 @@ footer p{
         <div>
 
             <h2>
-                Nossa Fundadora
+                Nossa Fundadora 💜
             </h2>
 
             <p>
                 Sou apaixonada por crochê!
-                Cada peça é feita à mão com
-                muito carinho e dedicação.
+                Cada peça é feita à mão,
+                com carinho e dedicação,
+                para criar modelos especiais
+                para cada cliente.
             </p>
 
             <br>
 
             <p>
-                Serra - ES | Enviamos para todo Brasil
+                <b>📍 Serra - ES</b>
+                |
+                Enviamos para todo o Brasil
             </p>
 
         </div>
@@ -618,7 +616,11 @@ footer p{
 </section>
 
 
-<section class="produtos" id="colecao">
+<!-- COLEÇÃO -->
+
+<section
+    class="produtos"
+    id="colecao">
 
     <div class="titulo">
 
@@ -627,7 +629,7 @@ footer p{
         </h2>
 
         <p>
-            Moda praia 100% feita à mão
+            Modelos de crochê feitos à mão
         </p>
 
     </div>
@@ -636,11 +638,13 @@ footer p{
     <div class="grid">
 
 
+        <!-- PRODUTO 1 -->
+
         <div class="card">
 
             <img
-            src="https://images.pexels.com/photos/34042319/pexels-photo-34042319.jpeg?auto=compress&cs=tinysrgb&w=900"
-            alt="Crochê praia">
+                src="laranja.jpg"
+                alt="Conjunto de crochê laranja">
 
             <div class="card-info">
 
@@ -649,8 +653,8 @@ footer p{
                 </h3>
 
                 <p>
-                    Peça artesanal feita
-                    sob encomenda.
+                    Conjunto artesanal em crochê,
+                    feito sob encomenda.
                 </p>
 
                 <p class="preco">
@@ -658,8 +662,11 @@ footer p{
                 </p>
 
                 <button
-                class="comprar"
-                onclick="adicionarCarrinho('Conjunto Sunset Laranja',149.90)">
+                    class="comprar"
+                    onclick="adicionar(
+                        'Conjunto Sunset Laranja',
+                        149.90
+                    )">
 
                     🛒 Adicionar ao carrinho
 
@@ -670,11 +677,13 @@ footer p{
         </div>
 
 
+        <!-- PRODUTO 2 -->
+
         <div class="card">
 
             <img
-            src="https://images.pexels.com/photos/34042326/pexels-photo-34042326.jpeg?auto=compress&cs=tinysrgb&w=900"
-            alt="Biquíni de crochê">
+                src="verde.jpg"
+                alt="Top de crochê colorido">
 
             <div class="card-info">
 
@@ -683,7 +692,7 @@ footer p{
                 </h3>
 
                 <p>
-                    Modelo exclusivo
+                    Modelo colorido e exclusivo
                     feito à mão.
                 </p>
 
@@ -692,8 +701,11 @@ footer p{
                 </p>
 
                 <button
-                class="comprar"
-                onclick="adicionarCarrinho('Top Brasil Crochê',89.90)">
+                    class="comprar"
+                    onclick="adicionar(
+                        'Top Brasil Crochê',
+                        89.90
+                    )">
 
                     🛒 Adicionar ao carrinho
 
@@ -704,11 +716,13 @@ footer p{
         </div>
 
 
+        <!-- PRODUTO 3 -->
+
         <div class="card">
 
             <img
-            src="https://images.pexels.com/photos/31039666/pexels-photo-31039666.jpeg?auto=compress&cs=tinysrgb&w=900"
-            alt="Biquíni rosa de crochê">
+                src="azul.jpg"
+                alt="Conjunto azul de crochê">
 
             <div class="card-info">
 
@@ -717,8 +731,8 @@ footer p{
                 </h3>
 
                 <p>
-                    Detalhes artesanais
-                    exclusivos.
+                    Conjunto azul com detalhes
+                    artesanais em flores.
                 </p>
 
                 <p class="preco">
@@ -726,8 +740,11 @@ footer p{
                 </p>
 
                 <button
-                class="comprar"
-                onclick="adicionarCarrinho('Conjunto Azul Flor 3D',159.90)">
+                    class="comprar"
+                    onclick="adicionar(
+                        'Conjunto Azul Flor 3D',
+                        159.90
+                    )">
 
                     🛒 Adicionar ao carrinho
 
@@ -737,20 +754,13 @@ footer p{
 
         </div>
 
-    </div>
 
-    <p style="
-        text-align:center;
-        margin-top:25px;
-        color:#777;
-        font-size:13px;
-    ">
-        Fotos reais da Web usadas apenas como referência visual.
-        Elas não representam necessariamente produtos da Salena Crochê.
-    </p>
+    </div>
 
 </section>
 
+
+<!-- SOBRE -->
 
 <section id="sobre">
 
@@ -765,9 +775,15 @@ footer p{
     <div class="sobre">
 
         <p>
-            Salena Crochê nasceu em 2023 na Serra, ES.
-            Cada ponto feito à mão por mim, sem máquina.
-            Qualidade, carinho e autoestima em cada peça.
+
+            A Salena Crochê nasceu em 2023
+            na Serra, ES.
+
+            Cada ponto é feito à mão,
+            sem máquina, buscando unir
+            qualidade, carinho e personalidade
+            em cada peça.
+
         </p>
 
     </div>
@@ -775,7 +791,11 @@ footer p{
 </section>
 
 
-<section class="politica" id="politica">
+<!-- POLÍTICA -->
+
+<section
+    class="politica"
+    id="politica">
 
     <div class="titulo">
 
@@ -791,22 +811,26 @@ footer p{
 
             <li>
                 <b>Envio:</b>
-                Todo Brasil, produção 5-10 dias.
+                Todo o Brasil.
+                Produção de 5 a 10 dias.
             </li>
 
             <li>
                 <b>Troca:</b>
-                Só por defeito em 7 dias.
+                Consulte as condições
+                para defeitos.
             </li>
 
             <li>
                 <b>Medidas:</b>
-                Envie pelo WhatsApp.
+                Informe suas medidas
+                pelo WhatsApp.
             </li>
 
             <li>
                 <b>Privacidade:</b>
-                Seus dados só para envio.
+                Seus dados serão usados
+                para atendimento e envio.
             </li>
 
         </ul>
@@ -816,20 +840,25 @@ footer p{
 </section>
 
 
-<section class="contato" id="contato">
+<!-- CONTATO -->
+
+<section
+    class="contato"
+    id="contato">
 
     <h2>
         Vamos conversar? 💜
     </h2>
 
     <p>
-        Tire suas dúvidas ou faça sua encomenda.
+        Tire suas dúvidas ou faça
+        sua encomenda.
     </p>
 
     <a
-    class="whatsapp"
-    href="https://wa.me/5527999999999"
-    target="_blank">
+        class="whatsapp"
+        href="https://wa.me/5527999999999"
+        target="_blank">
 
         💬 Falar no WhatsApp
 
@@ -837,6 +866,8 @@ footer p{
 
 </section>
 
+
+<!-- RODAPÉ -->
 
 <footer>
 
@@ -851,14 +882,20 @@ footer p{
 </footer>
 
 
-<!-- CONTA -->
+<!-- MODAL CONTA -->
 
-<div class="modal" id="modalConta">
+<div
+    class="modal"
+    id="modalConta">
 
     <div class="modal-box">
 
-        <span class="fechar" onclick="fecharConta()">
+        <span
+            class="fechar"
+            onclick="fecharConta()">
+
             ×
+
         </span>
 
         <h2>
@@ -866,36 +903,40 @@ footer p{
         </h2>
 
         <input
-        type="text"
-        id="nome"
-        placeholder="Nome completo">
+            id="nome"
+            type="text"
+            placeholder="Nome completo">
 
         <input
-        type="email"
-        id="email"
-        placeholder="E-mail">
+            id="email"
+            type="email"
+            placeholder="E-mail">
 
         <input
-        type="tel"
-        id="telefone"
-        placeholder="WhatsApp">
+            id="telefone"
+            type="tel"
+            placeholder="WhatsApp">
 
         <input
-        type="password"
-        id="senha"
-        placeholder="Crie uma senha">
+            id="senha"
+            type="password"
+            placeholder="Crie uma senha">
 
         <button
-        class="btn-modal"
-        onclick="criarConta()">
+            class="btn-modal"
+            onclick="criarConta()">
 
             Criar Conta e Ganhar 10% OFF 🎉
 
         </button>
 
         <p
-        id="mensagemConta"
-        style="text-align:center;margin-top:15px;">
+            id="mensagemConta"
+            style="
+                text-align:center;
+                margin-top:15px;
+            ">
+
         </p>
 
     </div>
@@ -903,31 +944,45 @@ footer p{
 </div>
 
 
-<!-- CARRINHO -->
+<!-- MODAL CARRINHO -->
 
-<div class="modal" id="modalCarrinho">
+<div
+    class="modal"
+    id="modalCarrinho">
 
     <div class="modal-box">
 
-        <span class="fechar" onclick="fecharCarrinho()">
+        <span
+            class="fechar"
+            onclick="fecharCarrinho()">
+
             ×
+
         </span>
 
         <h2>
             Meu Carrinho 🛒
         </h2>
 
-        <div id="listaCarrinho">
-            <p>Seu carrinho está vazio.</p>
+        <div id="lista">
+
+            <p>
+                Seu carrinho está vazio.
+            </p>
+
         </div>
 
-        <div class="total" id="total">
+        <div
+            class="total"
+            id="total">
+
             Total: R$ 0,00
+
         </div>
 
         <button
-        class="btn-modal"
-        onclick="finalizarCompra()">
+            class="btn-modal"
+            onclick="finalizar()">
 
             Finalizar pelo WhatsApp
 
@@ -948,9 +1003,9 @@ let carrinho = [];
 function abrirConta(){
 
     document
-    .getElementById("modalConta")
-    .classList
-    .add("ativo");
+        .getElementById("modalConta")
+        .classList
+        .add("ativo");
 
 }
 
@@ -958,32 +1013,54 @@ function abrirConta(){
 function fecharConta(){
 
     document
-    .getElementById("modalConta")
-    .classList
-    .remove("ativo");
+        .getElementById("modalConta")
+        .classList
+        .remove("ativo");
 
 }
 
 
 function criarConta(){
 
-    let nome =
-    document.getElementById("nome").value;
+    const nome =
+        document
+            .getElementById("nome")
+            .value
+            .trim();
 
-    let email =
-    document.getElementById("email").value;
+    const email =
+        document
+            .getElementById("email")
+            .value
+            .trim();
 
-    let telefone =
-    document.getElementById("telefone").value;
+    const telefone =
+        document
+            .getElementById("telefone")
+            .value
+            .trim();
 
-    let senha =
-    document.getElementById("senha").value;
+    const senha =
+        document
+            .getElementById("senha")
+            .value;
 
 
-    if(!nome || !email || !senha){
+    if(
+        !nome ||
+        !email ||
+        !senha
+    ){
 
-        document.getElementById("mensagemConta").innerText =
-        "Preencha nome, e-mail e senha.";
+        document
+            .getElementById("mensagemConta")
+            .style
+            .color = "#c62865";
+
+        document
+            .getElementById("mensagemConta")
+            .innerText =
+            "Preencha nome, e-mail e senha.";
 
         return;
 
@@ -993,19 +1070,26 @@ function criarConta(){
     localStorage.setItem(
         "salena_user",
         JSON.stringify({
+
             nome,
             email,
             telefone,
             senha
+
         })
     );
 
 
-    document.getElementById("mensagemConta").style.color =
-    "green";
+    document
+        .getElementById("mensagemConta")
+        .style
+        .color = "green";
 
-    document.getElementById("mensagemConta").innerText =
-    "Conta criada! Você ganhou 10% OFF 🎉";
+
+    document
+        .getElementById("mensagemConta")
+        .innerText =
+        "Conta criada! Você ganhou 10% OFF 🎉";
 
 
     setTimeout(
@@ -1018,14 +1102,21 @@ function criarConta(){
 
 /* CARRINHO */
 
-function adicionarCarrinho(nome,preco){
+function adicionar(
+    nome,
+    preco
+){
 
     carrinho.push({
-        nome:nome,
-        preco:preco
+
+        nome: nome,
+        preco: preco
+
     });
 
-    atualizarCarrinho();
+
+    atualizar();
+
 
     alert(
         nome +
@@ -1035,32 +1126,49 @@ function adicionarCarrinho(nome,preco){
 }
 
 
-function atualizarCarrinho(){
+function remover(i){
 
-    let lista =
-    document.getElementById("listaCarrinho");
+    carrinho.splice(
+        i,
+        1
+    );
 
-    let contador =
-    document.getElementById("contador");
+    atualizar();
 
-    let total =
-    document.getElementById("total");
+}
+
+
+function atualizar(){
+
+    const lista =
+        document
+            .getElementById("lista");
+
+    const contador =
+        document
+            .getElementById("contador");
+
+    const total =
+        document
+            .getElementById("total");
 
 
     contador.innerText =
-    carrinho.length;
+        carrinho.length;
 
 
     lista.innerHTML = "";
 
 
-    if(carrinho.length === 0){
+    if(
+        carrinho.length === 0
+    ){
 
         lista.innerHTML =
-        "<p>Seu carrinho está vazio.</p>";
+            "<p>Seu carrinho está vazio.</p>";
 
         total.innerText =
-        "Total: R$ 0,00";
+            "Total: R$ 0,00";
 
         return;
 
@@ -1071,30 +1179,39 @@ function atualizarCarrinho(){
 
 
     carrinho.forEach(
-        (produto,index)=>{
+        (produto, i) => {
 
             soma += produto.preco;
 
 
-            let item =
-            document.createElement("div");
+            const item =
+                document.createElement(
+                    "div"
+                );
+
 
             item.className =
-            "item-carrinho";
+                "item";
 
 
             item.innerHTML = `
 
                 <span>
-                    ${produto.nome}<br>
-                    R$ ${produto.preco
-                    .toFixed(2)
-                    .replace(".",",")}
+
+                    ${produto.nome}
+
+                    <br>
+
+                    R$
+                    ${produto.preco
+                        .toFixed(2)
+                        .replace(".", ",")}
+
                 </span>
 
                 <button
-                class="remover"
-                onclick="removerProduto(${index})">
+                    class="remover"
+                    onclick="remover(${i})">
 
                     Remover
 
@@ -1110,27 +1227,22 @@ function atualizarCarrinho(){
 
 
     total.innerText =
-    "Total: R$ " +
-    soma.toFixed(2).replace(".",",");
+        "Total: R$ " +
+        soma
+            .toFixed(2)
+            .replace(".", ",");
 
 }
 
 
-function removerProduto(index){
-
-    carrinho.splice(index,1);
-
-    atualizarCarrinho();
-
-}
-
+/* ABRIR CARRINHO */
 
 function abrirCarrinho(){
 
     document
-    .getElementById("modalCarrinho")
-    .classList
-    .add("ativo");
+        .getElementById("modalCarrinho")
+        .classList
+        .add("ativo");
 
 }
 
@@ -1138,16 +1250,20 @@ function abrirCarrinho(){
 function fecharCarrinho(){
 
     document
-    .getElementById("modalCarrinho")
-    .classList
-    .remove("ativo");
+        .getElementById("modalCarrinho")
+        .classList
+        .remove("ativo");
 
 }
 
 
-function finalizarCompra(){
+/* FINALIZAR */
 
-    if(carrinho.length === 0){
+function finalizar(){
+
+    if(
+        carrinho.length === 0
+    ){
 
         alert(
             "Seu carrinho está vazio."
@@ -1159,66 +1275,89 @@ function finalizarCompra(){
 
 
     let mensagem =
-    "Olá! Quero fazer uma encomenda na Salena Crochê:%0A%0A";
+        "Olá! Quero fazer uma encomenda na Salena Crochê:%0A%0A";
+
 
     let total = 0;
 
 
-    carrinho.forEach(produto=>{
+    carrinho.forEach(
+        produto => {
 
-        mensagem +=
-        "• " +
-        produto.nome +
-        " - R$ " +
-        produto.preco
-        .toFixed(2)
-        .replace(".",",") +
-        "%0A";
+            mensagem +=
+                "• " +
+                produto.nome +
+                " - R$ " +
+                produto.preco
+                    .toFixed(2)
+                    .replace(".", ",") +
+                "%0A";
 
-        total += produto.preco;
 
-    });
+            total +=
+                produto.preco;
+
+        }
+    );
 
 
     mensagem +=
-    "%0ATotal: R$ " +
-    total.toFixed(2).replace(".",",");
+        "%0ATotal: R$ " +
+        total
+            .toFixed(2)
+            .replace(".", ",");
 
 
     window.open(
+
         "https://wa.me/5527999999999?text=" +
         mensagem,
+
         "_blank"
+
     );
 
 }
 
 
-/* FECHAR MODAL CLICANDO FORA */
+/* FECHAR CLICANDO FORA */
 
-window.onclick = function(event){
+window.onclick =
+    function(event){
 
-    let conta =
-    document.getElementById("modalConta");
-
-    let carrinhoModal =
-    document.getElementById("modalCarrinho");
-
-
-    if(event.target === conta){
-
-        fecharConta();
-
-    }
+        const conta =
+            document
+                .getElementById(
+                    "modalConta"
+                );
 
 
-    if(event.target === carrinhoModal){
+        const carrinhoModal =
+            document
+                .getElementById(
+                    "modalCarrinho"
+                );
 
-        fecharCarrinho();
 
-    }
+        if(
+            event.target === conta
+        ){
 
-};
+            fecharConta();
+
+        }
+
+
+        if(
+            event.target ===
+            carrinhoModal
+        ){
+
+            fecharCarrinho();
+
+        }
+
+    };
 
 </script>
 
