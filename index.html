@@ -83,7 +83,8 @@ footer{background:#28143f;color:white;text-align:center;padding:28px}footer p{ma
 
 <section class="contato" id="contato">
 <h2>Vamos conversar? 💜</h2><p>Tire suas dúvidas ou faça sua encomenda.</p>
-<a class="whatsapp" href="https://wa.me/5527999999999" target="_blank">💬 Falar no WhatsApp</a>
+<a class="whatsapp" href="https://wa.me/5527998961284" target="_blank">💬 Falar no WhatsApp</a>
+<div id="contato-email" style="padding:18px 12px 0;text-align:center;font-size:15px">📧 E-mail: <a style="color:white;font-weight:bold" href="mailto:27998961284.samaraleocadio@gmail.com">27998961284.samaraleocadio@gmail.com</a></div>
 </section>
 
 <footer><p>© 2026 Salena Crochê</p><p>Feito à mão com amor 🧶💜</p></footer>
@@ -154,7 +155,7 @@ let mensagem="Olá! Quero fazer uma encomenda na Salena Crochê:%0A%0A",subtotal
 carrinho.forEach(produto=>{mensagem+="• "+produto.nome+" - R$ "+produto.preco.toFixed(2).replace(".",",")+"%0A";subtotal+=produto.preco;});
 const frete=getFrete(),pagamento=getPagamento(),total=subtotal+frete;
 mensagem+="%0ASubtotal: R$ "+subtotal.toFixed(2).replace(".",",")+"%0AFrete: R$ "+frete.toFixed(2).replace(".",",")+"%0AForma de pagamento: "+pagamento+"%0ATotal: R$ "+total.toFixed(2).replace(".",",");
-window.open("https://wa.me/5527999999999?text="+mensagem,"_blank");
+window.open("https://wa.me/5527998961284?text="+mensagem,"_blank");
 }
 
 window.onclick=function(event){
@@ -165,7 +166,5 @@ if(event.target===carrinhoModal)fecharCarrinho();
 };
 </script>
 
-<!-- Contato por e-mail -->
-<div id="contato-email" style="padding:12px;text-align:center;font-size:14px">E-mail: <a href="mailto:27998961284.samaraleocadio@gmail.com">27998961284.samaraleocadio@gmail.com</a></div>
 </body>
 </html>
